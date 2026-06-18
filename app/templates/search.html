@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☁️ CloudNotes</div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/search" class="active">Search</a>
+    </div>
+</nav>
+
+<div class="search-hero">
+    <h1>Find Your Notes Instantly</h1>
+    <p>Search by title, keyword, or note content.</p>
+
+    <form method="GET" action="/search" class="search-form">
+        <input
+            type="text"
+            name="q"
+            placeholder="Search notes..."
+            value="{{ query }}"
+        >
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="results-container">
+
+    <div class="results-header">
+        <h2>Search Results</h2>
+        <span>{{ notes|length }} result(s)</span>
+    </div>
+
+    {% if notes %}
+        {% for note in notes %}
+        <div class="result-card">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty-search">
+            <div class="icon">🔍</div>
+            <h3>No matching notes found</h3>
+            <p>Try searching with a different keyword.</p>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

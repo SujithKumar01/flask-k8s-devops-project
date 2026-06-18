@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    color: #1f2937;
+}
+
+.navbar {
+    background: #111827;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+.nav-links .active {
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: -25px auto 40px;
+    padding: 0 20px;
+}
+
+.add-section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.add-section h2,
+.notes-header h2 {
+    margin-top: 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    margin: 8px 0;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button,
+.delete-btn {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.note-form button {
+    margin-top: 10px;
+}
+
+.notes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 15px;
+}
+
+.notes-header span {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: #4b5563;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.note-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.note-card input {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.update-btn {
+    background: #16a34a;
+}
+
+.update-btn:hover {
+    background: #15803d;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.empty-box {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 16px;
+    grid-column: 1 / -1;
+}
+
+.search-hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+}
+
+.search-hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.search-hero p {
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input {
+    width: 500px;
+    max-width: 80%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+}
+
+.search-form button {
+    padding: 15px 25px;
+}
+
+.results-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.results-header span {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: #4b5563;
+}
+
+.result-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.result-card h3 {
+    color: #2563eb;
+}
+
+.empty-search {
+    text-align: center;
+    padding: 80px;
+    background: white;
+    border-radius: 16px;
+}
+
+.empty-search .icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}

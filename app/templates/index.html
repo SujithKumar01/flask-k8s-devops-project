@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CloudNotes Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☁️ CloudNotes</div>
+
+    <div class="nav-links">
+        <a href="/" class="active">Dashboard</a>
+        <a href="/search">Search</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>CloudNotes</h1>
+    <p>Create, edit, delete, and manage your notes easily.</p>
+</div>
+
+<div class="container">
+
+    <div class="add-section">
+        <h2>Create New Note</h2>
+
+        <form method="POST" action="/add" class="note-form">
+            <input type="text" name="title" placeholder="Enter note title..." required>
+            <textarea name="content" placeholder="Write your note here..." required></textarea>
+            <button type="submit">Add Note</button>
+        </form>
+    </div>
+
+    <div class="notes-header">
+        <h2>Your Notes</h2>
+        <span>{{ notes|length }} note(s)</span>
+    </div>
+
+    <div class="notes-grid">
+        {% for note in notes %}
+        <div class="note-card">
+            <form method="POST" action="/edit/{{ note.id }}">
+                <input type="text" name="title" value="{{ note.title }}" required>
+                <textarea name="content" required>{{ note.content }}</textarea>
+
+                <div class="actions">
+                    <button type="submit" class="update-btn">Update</button>
+                    <a href="/delete/{{ note.id }}" class="delete-btn">Delete</a>
+                </div>
+            </form>
+        </div>
+        {% else %}
+        <div class="empty-box">
+            <h3>No notes yet</h3>
+            <p>Create your first note above.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</body>
+</html>
