@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud_notes-deployment
+  labels:
+    app: cloud_notes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloud_notes
+  template:
+    metadata:
+      labels:
+        app: cloud_notes
+    spec:
+      containers:
+        - name: cloud_notes
+          image: sujithkumar0109/cloud_notes:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
