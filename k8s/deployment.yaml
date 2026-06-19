@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloud_notes-deployment
+  name: cloud-notes-deployment
   labels:
-    app: cloud_notes
+    app: cloud-notes
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: cloud_notes
+      app: cloud-notes
   template:
     metadata:
       labels:
-        app: cloud_notes
+        app: cloud-notes
     spec:
       containers:
-        - name: cloud_notes
+        - name: cloud-notes
           image: sujithkumar0109/cloud_notes:latest
           imagePullPolicy: Always
           ports:
