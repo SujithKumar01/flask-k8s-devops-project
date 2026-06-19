@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cloud-notes
-          image: sujithkumar0109/cloud_notes:latest
+          image: sujithkumar01/cloud_notes:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
